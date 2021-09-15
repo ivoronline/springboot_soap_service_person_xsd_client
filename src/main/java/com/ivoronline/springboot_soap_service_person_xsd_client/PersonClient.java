@@ -11,6 +11,7 @@ import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 public class PersonClient extends WebServiceGatewaySupport {
 
   //PROPERTIES
+  String generatedClasses   = "com.ivoronline.soap";
   String webServiceEndpoint = "http://localhost:8080/PersonWebService";
 
   //==========================================================================
@@ -28,7 +29,7 @@ public class PersonClient extends WebServiceGatewaySupport {
 
     //POINT MARSHALLER TO GENERATED CLASSES
     Jaxb2Marshaller  marshaller = new Jaxb2Marshaller();
-                     marshaller.setContextPath("com.ivoronline.soap");
+                     marshaller.setContextPath(generatedClasses);
 
     //CONFIGURE CLIENT
     setDefaultUri  (webServiceEndpoint);
